@@ -49,7 +49,6 @@ body {
 
 #Home:hover {
     background-color: #3a5a8f;
-    transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -90,7 +89,6 @@ img.card {
 img.card:hover {
     border: 2px solid #4a6fa5;
     cursor: pointer;
-    transform: perspective(1000px) translateY(-5px) rotateX(5deg);
     box-shadow: 0 12px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -165,7 +163,6 @@ img.card:hover {
 
 #Container-Dialogs button:hover {
     background-color: #3a5a8f;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
