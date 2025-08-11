@@ -81,10 +81,9 @@ img {
 img.card {
     object-fit: cover;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     background: white;
-    transform-style: preserve-3d;
     border: 2px solid transparent;
 }
 
