@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../styles/game.css">
+    <link rel="icon" type="image/x-icon" href="../assets/image/cards/Cerezas.png">
+    <title>Memoria - Juego</title>
+</head>
+<body>
+    <main id="Container-Main">  
+
+        <!-- Contenedor de la barra de navegación -->
+        <section id="Container-Navbar">
+            <nav>
+                <button id="Home">Home</button>
+            </nav>
+        </section>
+
+        <!-- Contenedor de la presentación / Puntos del usuario / Tiempo de partida -->
+        <section id="Container-Points">
+            <h1 id="Username_Points"></h1>
+            <h1 id="Points_Points"></h1>
+        </section>
+
+        <section id="Container-Cards">
+            <div id="row0" class="row"></div><br>
+            <div id="row1" class="row"></div><br>
+            <div id="row2" class="row"></div><br>
+            <div id="row3" class="row"></div><br>
+        </section>
+
+        <section id="Container-Dialogs">
+            <dialog id="dialog-exit">
+                <h1>¿Quieres salir?</h1>
+                <button id="btn-exit-yes">Sí</button>
+                <button id="btn-exit-no">No</button>
+            </dialog>
+
+            <dialog id="dialog-win">
+                <p>Felicitaciones! ¡Has ganado el juego!</p>
+                <p>¿Quieres empezar una nueva partida?</p>
+                <button id="btn-win-reset">Reiniciar</button>
+                <button id="btn-win-return">Volver</button>
+            </dialog>
+        </section>
+    </main>
+
+    <script src="../scripts/scriptsGame.js"></script>
+</body>
+</html>

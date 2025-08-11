@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/image/Cerezas.png">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Memoria - Inicio</title>
+</head>
+<body>
+    <main id="Container-Main">
+
+        <!-- Contenedor del menu de inicio -->
+        <section id="Container-MenuStart">
+            <h1>Bienvenido al Juego de memoria</h1>
+            <button id="Button-Play">Comenzar</button>
+            <button id="Button-Instructions">Instrucciones</button>
+
+            <p>Este Fue realizado por Jeus Cortez.</p>
+        </section>
+
+        <!-- Contenedor de los dialogos -->
+        <section id="Container-dialogs">
+
+            <!-- Dialogo donde ingresas tu nombre -->
+            <dialog id="Dialog-Play" style="display: none;">
+                <div id="Container-dialogs-play">
+                    <p>Por favor antes de comenzar, Ingrese su nombre.</p>
+                    <input type="text" id="Dialog-Start-Name" placeholder="Ingrese su nombre">
+                    <button id="Dialog-Start-Play">Comenzar</button>
+                    <button id="Dialog-Start-Cancel">Cancelar</button>
+                </div>
+            </dialog>
+
+            <!-- Dialogo de las instrucciones -->
+            <dialog id="Dialog-Instructions" style="display: none;">
+                <div id="Container-Image">
+                    <img src="assets/image/instructions/1.png" alt="" id="instructions">
+                </div>
+
+                <div id="Container-buttons">
+                    <div>
+                        <button id="Button-Instructions-Back">Atras</button>
+                        <button id="Button-Instructions-Close">Cerrar</button>
+                        <button id="Button-Instructions-Next">Siguiente</button>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+    </main>
+
+    <script src="scripts/scriptsMenu.js"></script>
+</body>
+</html>
