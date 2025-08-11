@@ -87,9 +87,7 @@ img.card {
 }
 
 img.card:hover {
-    border: 2px solid #4a6fa5;
     cursor: pointer;
-    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.2);
 }
 
 .desactivated {
