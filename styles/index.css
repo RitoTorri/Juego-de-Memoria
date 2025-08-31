@@ -1,4 +1,4 @@
-/* Reset y estilos base */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -7,238 +7,165 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 50%, #d9e0eb 100%);
+    background: linear-gradient(135deg, #1c1c2e 0%, #2e2e3f 100%);
+    /* fondo oscuro elegante */
+    color: #fff;
     min-height: 100vh;
-    color: #2c3e50;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    overflow-x: hidden;
 }
 
 /* Contenedor principal */
 #Container-Main {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Menú de inicio */
-#Container-MenuStart {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.95);
+    max-width: 500px;
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.15));
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #bfa135;
+    /* borde dorado */
+    box-shadow: 0 10px 25px rgba(191, 161, 53, 0.3);
 }
 
-#Container-MenuStart h1 {
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
+/* Títulos */
+h1 {
     font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #f5d27b;
+    /* dorado claro */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-#Container-MenuStart button {
-    background-color: #4a6fa5;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    margin: 0.5rem;
-    border-radius: 30px;
-    cursor: pointer;
+/* Botones principales */
+button {
+    padding: 0.8rem 1.8rem;
+    margin: 0.5rem 0;
+    border: 2px solid #f5d27b;
+    /* dorado */
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f5d27b 0%, #bfa135 100%);
+    color: #1c1c2e;
+    text-align: center;
+    /* texto oscuro */
     font-size: 1rem;
-    transition: all 0.3s ease;
-    width: 200px;
-    max-width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(191, 161, 53, 0.4);
 }
 
-#Container-MenuStart button:hover {
-    background-color: #3a5a8f;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+button:hover {
+    background: linear-gradient(135deg, #bfa135 0%, #f5d27b 100%);
+    transform: translateY(-3px);
 }
 
-#Container-MenuStart p {
-    margin-top: 2rem;
-    color: #7f8c8d;
-    font-size: 0.9rem;
+/* Enlace del autor */
+p a {
+    color: #f5d27b;
+    /* dorado */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-/* Estilos para los diálogos */
-#Container-dialogs dialog {
+p a:hover {
+    color: #bfa135;
+}
+
+/* GitHub Icon */
+svg.bi-github {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    fill: #f5d27b;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+}
+
+svg.bi-github:hover {
+    fill: #bfa135;
+}
+
+/* Dialogos centrados */
+dialog {
+    border: none;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(145deg, #2e2e3f, #1c1c2e);
+    color: #f5d27b;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: none;
-    border-radius: 15px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.95);
-    color: #2c3e50;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 500px;
+    border: 2px solid #bfa135;
+    box-shadow: 0 15px 30px rgba(191, 161, 53, 0.5);
+    text-align: center;
     z-index: 1000;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.3s ease-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-}
-
-#Container-dialogs dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-}
-
-/* Diálogo de nombre */
-#Container-dialogs-play {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-#Container-dialogs-play p {
-    font-size: 1.1rem;
-    text-align: center;
-    color: #2c3e50;
-}
-
-#Dialog-Start-Name {
-    padding: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #2c3e50;
-    font-size: 1rem;
+/* Inputs dentro de diálogos */
+dialog input[type="text"] {
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-#Container-dialogs-play div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-#Dialog-Start-Play, #Dialog-Start-Cancel {
-    padding: 12px;
-    border: none;
-    border-radius: 30px;
+    padding: 0.6rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    border: 2px solid #bfa135;
+    background-color: #2e2e3f;
+    color: #f5d27b;
     font-size: 1rem;
+}
+
+/* Botones dentro de diálogos */
+dialog button {
+    width: 48%;
+    margin: 0.2rem 1%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f5d27b 0%, #bfa135 100%);
+    color: #1c1c2e;
+    border: 2px solid #bfa135;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease, transform 0.2s ease;
 }
 
-#Dialog-Start-Play {
-    background-color: #4a6fa5;
-    color: white;
-}
-
-#Dialog-Start-Play:hover {
-    background-color: #3a5a8f;
+dialog button:hover {
+    background: linear-gradient(135deg, #bfa135 0%, #f5d27b 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-#Dialog-Start-Cancel {
-    background-color: #95a5a6;
-    color: white;
-}
-
-#Dialog-Start-Cancel:hover {
-    background-color: #7f8c8d;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Diálogo de instrucciones */
-#Container-Image {
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
+/* Imagen de instrucciones */
 #Container-Image img {
     max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    border: 2px solid #bfa135;
 }
 
-#Container-buttons div {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.8rem;
+/* Contenedor de botones de instrucciones */
+#Container-buttons button {
+    width: 30%;
+    margin: 0 1%;
 }
 
-#Button-Instructions-Back, 
-#Button-Instructions-Close, 
-#Button-Instructions-Next {
-    padding: 12px;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex: 1;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#Button-Instructions-Back, #Button-Instructions-Next {
-    background-color: #4a6fa5;
-    color: white;
-}
-
-#Button-Instructions-Back:hover, #Button-Instructions-Next:hover {
-    background-color: #3a5a8f;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-#Button-Instructions-Close {
-    background-color: #95a5a6;
-    color: white;
-}
-
-#Button-Instructions-Close:hover {
-    background-color: #7f8c8d;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsive para móviles pequeños */
-@media (max-width: 480px) {
-    #Container-MenuStart {
+/* Responsivo */
+@media (max-width: 500px) {
+    #Container-Main {
         padding: 1.5rem;
     }
-    
-    #Container-MenuStart h1 {
+
+    h1 {
         font-size: 1.5rem;
     }
-    
-    #Container-MenuStart button {
+
+    button {
         width: 100%;
-        margin: 0.5rem 0;
-        padding: 10px;
     }
-    
-    #Container-dialogs dialog {
-        padding: 20px;
-    }
-    
-    #Container-buttons div {
-        flex-direction: column;
-    }
-    
-    #Button-Instructions-Back, 
-    #Button-Instructions-Close, 
-    #Button-Instructions-Next {
-        width: 100%;
+
+    #Container-buttons button {
+        width: 30%;
     }
 }

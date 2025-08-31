@@ -7,21 +7,25 @@
 }
 
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 50%, #d9e0eb 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #fdfaf5 100%);
     min-height: 100vh;
     color: #333;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0;
+    overflow: hidden;
 }
 
 /* Contenedor principal */
 #Container-Main {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 /* Barra de navegación */
@@ -32,24 +36,24 @@ body {
 #Container-Navbar nav {
     display: flex;
     justify-content: flex-end;
-    padding: 10px 0;
+    width: 100%;
 }
 
 #Home {
-    background-color: #4a6fa5;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
+    background-color: #fff8e7;
+    color: #bfa135;
+    border: 2px solid #bfa135;
+    padding: 10px 25px;
+    border-radius: 25px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #Home:hover {
-    background-color: #3a5a8f;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background-color: #bfa135;
+    color: #ffffff;
+    transform: scale(1.05);
 }
 
 /* Puntos del usuario */
@@ -58,20 +62,37 @@ body {
     justify-content: space-between;
     width: 100%;
     max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 248, 231, 0.9);
     padding: 15px 25px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid #bfa135;
+    box-shadow: 0 4px 15px rgba(191, 161, 53, 0.1);
 }
 
-#Username_Points, #Points_Points {
+#Username_Points,
+#Points_Points {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: #bfa135;
 }
 
-/* Contenedor de cartas - ESTILOS ESPECÍFICOS REQUERIDOS */
+/* Contenedor de cartas */
+#Container-Cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Cartas */
 img {
     width: 100px;
     height: 100px;
@@ -79,37 +100,19 @@ img {
 
 img.card {
     object-fit: cover;
-    border-radius: 10px;
-    transition: all 0.1s ease;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    background: white;
+    border-radius: 12px;
+    transition: transform 0.2s ease, border 0.2s ease;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
 img.card:hover {
-    cursor: pointer;
+    transform: scale(1.05);
+    border: 2px solid #bfa135;
 }
 
 .desactivated {
     pointer-events: none;
-}
-
-/* Organización de las cartas */
-#Container-Cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-    flex-wrap: wrap;
 }
 
 /* Diálogos */
@@ -121,53 +124,78 @@ img.card:hover {
     border: none;
     border-radius: 15px;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.95);
-    color: #2c3e50;
+    background: rgba(255, 248, 231, 0.95);
+    color: #bfa135;
     max-width: 90%;
     width: 400px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(191, 161, 53, 0.2);
     animation: fadeIn 0.3s ease-out;
-    border: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    border: 2px solid #bfa135;
 }
 
 #Container-Dialogs dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(3px);
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
-#Container-Dialogs h1, #Container-Dialogs p {
+#Container-Dialogs h1,
+#Container-Dialogs p {
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: #bfa135;
 }
 
+/* Botones de diálogos */
 #Container-Dialogs button {
-    background-color: #4a6fa5;
-    color: white;
-    border: none;
+    background-color: #fff8e7;
+    color: #bfa135;
+    border: 2px solid #bfa135;
     padding: 10px 20px;
     margin: 0 10px;
-    border-radius: 30px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 #Container-Dialogs button:hover {
-    background-color: #3a5a8f;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #bfa135;
+    color: #ffffff;
+    transform: scale(1.05);
 }
 
-#btn-exit-yes { background-color: #e74c3c; }
-#btn-exit-yes:hover { background-color: #c0392b; }
-#btn-win-return { background-color: #3498db; }
-#btn-win-return:hover { background-color: #2980b9; }
+#btn-exit-yes {
+    background-color: #f5d27b;
+    color: #1c1c2e;
+    border: 2px solid #f5d27b;
+}
+
+#btn-exit-yes:hover {
+    background-color: #d7b00f;
+}
+
+#btn-win-return {
+    background-color: #bfa135;
+    color: #fff;
+    border: 2px solid #bfa135;
+}
+
+#btn-win-return:hover {
+    background-color: #9d841f;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -175,11 +203,11 @@ img.card:hover {
         width: 90px;
         height: 90px;
     }
-    
+
     .row {
         gap: 10px;
     }
-    
+
     #Container-Points {
         flex-direction: column;
         gap: 10px;
@@ -192,24 +220,25 @@ img.card:hover {
         width: 80px;
         height: 80px;
     }
-    
+
     .row {
         gap: 8px;
     }
-    
+
     #Container-Points {
         padding: 10px 15px;
     }
-    
-    #Username_Points, #Points_Points {
+
+    #Username_Points,
+    #Points_Points {
         font-size: 1rem;
     }
-    
+
     #Home {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
-    
+
     #Container-Dialogs dialog {
         width: 90%;
         padding: 20px;
@@ -221,7 +250,7 @@ img.card:hover {
         width: 70px;
         height: 70px;
     }
-    
+
     .row {
         gap: 5px;
     }

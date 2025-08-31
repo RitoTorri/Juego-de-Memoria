@@ -18,20 +18,20 @@ let DOM_START = {
     dialog_Instructions: document.getElementById("Dialog-Instructions"),
 
     /* img de las instrucciones */
-    img : document.getElementById("instructions")
+    img: document.getElementById("instructions")
 }
 
 let imgInstructions = {
-    img1 : {
+    img1: {
         id: 1,
-        route : "assets/image/instructions/1.png"
+        route: "assets/image/instructions/1.png"
     },
     img2: {
-        id:2,
-        route : "assets/image/instructions/2.png"
+        id: 2,
+        route: "assets/image/instructions/2.png"
     },
-    img3 : {
-        id:3,
+    img3: {
+        id: 3,
         route: "assets/image/instructions/3.png"
     }
 }
@@ -85,23 +85,23 @@ function GameInstructions() {
 
     DOM_START.buttom_Next_Instructions.addEventListener("click", function () {
         count++
+        if (count === 4) count = 1
         imgChange(count)
-        if(count === 4) count = 1
     })
     DOM_START.buttom_Back_Instructions.addEventListener("click", function () {
         count--
+        if (count === 0) count = 3
         imgChange(count)
-        if(count === 0) count = 3
     })
     DOM_START.buttom_Close_Instructions.addEventListener("click", function () {
         DOM_START.dialog_Instructions.style.display = "none"
     })
 }
 
-function imgChange(n){
-    switch(n){
+function imgChange(n) {
+    switch (n) {
         case 1: DOM_START.img.src = imgInstructions.img1.route; break;
-        case 2: DOM_START.img.src = imgInstructions.img2.route; break;  
+        case 2: DOM_START.img.src = imgInstructions.img2.route; break;
         case 3: DOM_START.img.src = imgInstructions.img3.route; break;
     }
 }
