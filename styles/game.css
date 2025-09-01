@@ -101,13 +101,11 @@ img {
 img.card {
     object-fit: cover;
     border-radius: 12px;
-    transition: transform 0.2s ease, border 0.2s ease;
     border: 2px solid transparent;
     cursor: pointer;
 }
 
 img.card:hover {
-    transform: scale(1.05);
     border: 2px solid #bfa135;
 }
 
